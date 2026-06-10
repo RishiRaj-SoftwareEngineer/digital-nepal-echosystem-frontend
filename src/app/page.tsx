@@ -24,8 +24,8 @@ export default function Home() {
         </h1>
 
         {/* Description Box - Red BG with White Text & Blue Border */}
-        <div className="bg-[#C41E3A] border-4 border-[#174BA1] rounded-xl p-10 mb-8 shadow-lg">
-          <p className="text-white text-lg leading-relaxed font-medium">
+        <div className="bg-[#C41E3A] border-4 border-[#174BA1] rounded-xl p-6 mb-8 shadow-lg">
+          <p className="text-white text-3xl md:text-4xl leading-relaxed font-black">
             Creating something interesting for Nepal
           </p>
         </div>
