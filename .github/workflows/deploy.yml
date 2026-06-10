@@ -1,0 +1,54 @@
+name: Deploy to Production
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    name: Deploy to Production
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run linting
+        run: npm run lint
+
+      - name: Run type check
+        run: npm run type-check
+
+      - name: Run tests
+        run: npm run test -- --watchAll=false
+
+      - name: Build for production
+        run: npm run build
+
+      - name: Deploy to Vercel
+        uses: vercel/action@main
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+          production: true
+        env:
+          NEXT_PUBLIC_API_BASE_URL: ${{ secrets.PRODUCTION_API_BASE_URL }}
+
+      - name: Notify on success
+        if: success()
+        run: echo "✅ Successfully deployed to production"
+
+      - name: Notify on failure
+        if: failure()
+        run: |
+          echo "❌ Deployment failed"
+          exit 1
