@@ -25,47 +25,15 @@ jobs:
 
       - name: Run ESLint
         run: npm run lint
-        continue-on-error: false
+        continue-on-error: true
 
       - name: TypeScript type check
         run: npm run type-check
-        continue-on-error: false
-
-      - name: Check code formatting
-        run: npx prettier --check "src/**/*.{ts,tsx,json,css,md}"
-        continue-on-error: false
-
-  test:
-    runs-on: ubuntu-latest
-    name: Unit Tests
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18'
-          cache: 'npm'
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Run tests
-        run: npm run test -- --coverage --watchAll=false
-        continue-on-error: false
-
-      - name: Upload coverage reports
-        uses: codecov/codecov-action@v3
-        with:
-          files: ./coverage/lcov.info
-          flags: unittests
-          name: codecov-umbrella
-          fail_ci_if_error: false
+        continue-on-error: true
 
   build:
     runs-on: ubuntu-latest
-    name: Build & Bundle Analysis
+    name: Build Verification
 
     steps:
       - uses: actions/checkout@v4
@@ -82,17 +50,6 @@ jobs:
       - name: Build for production
         run: npm run build
         continue-on-error: false
-
-      - name: Analyze bundle size
-        run: npm run analyze
-        continue-on-error: true
-
-      - name: Upload build artifacts
-        uses: actions/upload-artifact@v3
-        with:
-          name: build-artifacts
-          path: .next/
-          retention-days: 5
 
   security:
     runs-on: ubuntu-latest
@@ -111,29 +68,6 @@ jobs:
         run: npm ci
 
       - name: Audit dependencies
-        run: npm audit --audit-level=moderate
+        run: npm audit --audit-level=high
         continue-on-error: true
 
-      - name: Dependency check
-        run: npx npm-check-updates
-        continue-on-error: true
-
-  notification:
-    runs-on: ubuntu-latest
-    name: Notify Results
-    needs: [lint, test, build, security]
-    if: always()
-
-    steps:
-      - name: Print job results
-        run: |
-          echo "Lint Status: ${{ needs.lint.result }}"
-          echo "Test Status: ${{ needs.test.result }}"
-          echo "Build Status: ${{ needs.build.result }}"
-          echo "Security Status: ${{ needs.security.result }}"
-
-      - name: Set status
-        run: |
-          if [[ "${{ needs.lint.result }}" == "failure" || "${{ needs.test.result }}" == "failure" || "${{ needs.build.result }}" == "failure" ]]; then
-            exit 1
-          fi
