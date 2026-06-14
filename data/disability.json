@@ -1,0 +1,10 @@
+[
+  {"id":"DIS001","citizenId":"C001","type":"Physical","card":"A"},
+  {"id":"DIS002","citizenId":"C002","type":"Visual","card":"B"},
+  {"id":"DIS003","citizenId":"C003","type":"Hearing","card":"C"},
+  {"id":"DIS004","citizenId":"C004","type":"Physical","card":"A"},
+  {"id":"DIS005","citizenId":"C005","type":"Visual","card":"B"},
+  {"id":"DIS006","citizenId":"C006","type":"Hearing","card":"C"},
+  {"id":"DIS007","citizenId":"C007","type":"Physical","card":"A"},
+  {"id":"DIS008","citizenId":"C008","type":"Visual","card":"B"}
+]

@@ -1,0 +1,10 @@
+[
+  {"id":"EA001","citizenId":"C001","status":"Approved"},
+  {"id":"EA002","citizenId":"C002","status":"Pending"},
+  {"id":"EA003","citizenId":"C003","status":"Approved"},
+  {"id":"EA004","citizenId":"C004","status":"Rejected"},
+  {"id":"EA005","citizenId":"C005","status":"Approved"},
+  {"id":"EA006","citizenId":"C006","status":"Pending"},
+  {"id":"EA007","citizenId":"C007","status":"Approved"},
+  {"id":"EA008","citizenId":"C008","status":"Approved"}
+]

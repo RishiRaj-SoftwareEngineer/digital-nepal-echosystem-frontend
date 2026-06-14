@@ -1,0 +1,10 @@
+[
+  {"id":"G001","citizen":"राम बहादुर थापा","issue":"Road Repair","status":"Pending"},
+  {"id":"G002","citizen":"सुनिता श्रेष्ठ","issue":"Water Supply","status":"Resolved"},
+  {"id":"G003","citizen":"कृष्ण अधिकारी","issue":"Street Light","status":"Pending"},
+  {"id":"G004","citizen":"गीता राई","issue":"Drainage","status":"In Review"},
+  {"id":"G005","citizen":"बिमल लिम्बू","issue":"Road Repair","status":"Resolved"},
+  {"id":"G006","citizen":"माया गुरुङ","issue":"Water Supply","status":"Pending"},
+  {"id":"G007","citizen":"प्रकाश कार्की","issue":"Waste Management","status":"In Review"},
+  {"id":"G008","citizen":"सविना तामाङ","issue":"Electricity","status":"Resolved"}
+]

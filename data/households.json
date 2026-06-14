@@ -1,0 +1,10 @@
+[
+  {"id":"H001","headName":"राम बहादुर थापा","ward":"Kummayak Ward 1","members":5},
+  {"id":"H002","headName":"सुनिता श्रेष्ठ","ward":"Kummayak Ward 2","members":4},
+  {"id":"H003","headName":"कृष्ण अधिकारी","ward":"Kummayak Ward 3","members":6},
+  {"id":"H004","headName":"गीता राई","ward":"Kummayak Ward 4","members":3},
+  {"id":"H005","headName":"बिमल लिम्बू","ward":"Kummayak Ward 5","members":5},
+  {"id":"H006","headName":"माया गुरुङ","ward":"Kummayak Ward 6","members":4},
+  {"id":"H007","headName":"प्रकाश कार्की","ward":"Kummayak Ward 7","members":7},
+  {"id":"H008","headName":"सविना तामाङ","ward":"Kummayak Ward 8","members":3}
+]

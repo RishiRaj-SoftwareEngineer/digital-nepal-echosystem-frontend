@@ -1,0 +1,10 @@
+[
+  {"id":"EMP001","citizenId":"C001","occupation":"Teacher"},
+  {"id":"EMP002","citizenId":"C002","occupation":"Nurse"},
+  {"id":"EMP003","citizenId":"C003","occupation":"Farmer"},
+  {"id":"EMP004","citizenId":"C004","occupation":"Student"},
+  {"id":"EMP005","citizenId":"C005","occupation":"Engineer"},
+  {"id":"EMP006","citizenId":"C006","occupation":"Business"},
+  {"id":"EMP007","citizenId":"C007","occupation":"Driver"},
+  {"id":"EMP008","citizenId":"C008","occupation":"Accountant"}
+]

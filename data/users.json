@@ -1,0 +1,50 @@
+[
+  {
+    "id": "U001",
+    "name": "राम अधिकारी",
+    "role": "ward-admin",
+    "ward": "Kummayak Ward 1"
+  },
+  {
+    "id": "U002",
+    "name": "सुरेश थापा",
+    "role": "ward-admin",
+    "ward": "Kummayak Ward 2"
+  },
+  {
+    "id": "U003",
+    "name": "अनिता राई",
+    "role": "ward-admin",
+    "ward": "Kummayak Ward 3"
+  },
+  {
+    "id": "U004",
+    "name": "दीपक लिम्बू",
+    "role": "municipality-admin",
+    "ward": "Kummayak Ward 4"
+  },
+  {
+    "id": "U005",
+    "name": "सरिता गुरुङ",
+    "role": "province-admin",
+    "ward": "Kummayak Ward 5"
+  },
+  {
+    "id": "U006",
+    "name": "कमल कार्की",
+    "role": "central-admin",
+    "ward": "Kummayak Ward 6"
+  },
+  {
+    "id": "U007",
+    "name": "मिना श्रेष्ठ",
+    "role": "data-entry",
+    "ward": "Kummayak Ward 7"
+  },
+  {
+    "id": "U008",
+    "name": "राजन तामाङ",
+    "role": "auditor",
+    "ward": "Kummayak Ward 8"
+  }
+]

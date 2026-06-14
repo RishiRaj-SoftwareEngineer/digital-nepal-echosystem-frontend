@@ -1,0 +1,66 @@
+[
+  {
+    "id": "C001",
+    "name": "राम बहादुर थापा",
+    "citizenshipNo": "01-01-75-00001",
+    "ward": "Kummayak Ward 1",
+    "gender": "Male",
+    "age": 45
+  },
+  {
+    "id": "C002",
+    "name": "सुनिता श्रेष्ठ",
+    "citizenshipNo": "01-01-75-00002",
+    "ward": "Kummayak Ward 2",
+    "gender": "Female",
+    "age": 32
+  },
+  {
+    "id": "C003",
+    "name": "कृष्ण प्रसाद अधिकारी",
+    "citizenshipNo": "01-01-75-00003",
+    "ward": "Kummayak Ward 3",
+    "gender": "Male",
+    "age": 51
+  },
+  {
+    "id": "C004",
+    "name": "गीता राई",
+    "citizenshipNo": "01-01-75-00004",
+    "ward": "Kummayak Ward 4",
+    "gender": "Female",
+    "age": 28
+  },
+  {
+    "id": "C005",
+    "name": "बिमल लिम्बू",
+    "citizenshipNo": "01-01-75-00005",
+    "ward": "Kummayak Ward 5",
+    "gender": "Male",
+    "age": 39
+  },
+  {
+    "id": "C006",
+    "name": "माया गुरुङ",
+    "citizenshipNo": "01-01-75-00006",
+    "ward": "Kummayak Ward 6",
+    "gender": "Female",
+    "age": 34
+  },
+  {
+    "id": "C007",
+    "name": "प्रकाश कार्की",
+    "citizenshipNo": "01-01-75-00007",
+    "ward": "Kummayak Ward 7",
+    "gender": "Male",
+    "age": 41
+  },
+  {
+    "id": "C008",
+    "name": "सविना तामाङ",
+    "citizenshipNo": "01-01-75-00008",
+    "ward": "Kummayak Ward 8",
+    "gender": "Female",
+    "age": 25
+  }
+]

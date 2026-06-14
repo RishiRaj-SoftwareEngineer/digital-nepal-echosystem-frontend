@@ -1,0 +1,10 @@
+[
+  {"id":"ER001","benefit":"Senior Citizen","minimumAge":60},
+  {"id":"ER002","benefit":"Single Women","minimumAge":35},
+  {"id":"ER003","benefit":"Disability Support","minimumAge":0},
+  {"id":"ER004","benefit":"Child Grant","minimumAge":0},
+  {"id":"ER005","benefit":"Education Support","minimumAge":5},
+  {"id":"ER006","benefit":"Health Support","minimumAge":0},
+  {"id":"ER007","benefit":"Employment Support","minimumAge":18},
+  {"id":"ER008","benefit":"Housing Support","minimumAge":18}
+]
