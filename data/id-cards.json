@@ -1,10 +1,5 @@
 [
-  {"id":"ID001","citizenId":"C001","cardNumber":"KP1001","status":"Active"},
-  {"id":"ID002","citizenId":"C002","cardNumber":"KP1002","status":"Active"},
-  {"id":"ID003","citizenId":"C003","cardNumber":"KP1003","status":"Active"},
-  {"id":"ID004","citizenId":"C004","cardNumber":"KP1004","status":"Pending"},
-  {"id":"ID005","citizenId":"C005","cardNumber":"KP1005","status":"Active"},
-  {"id":"ID006","citizenId":"C006","cardNumber":"KP1006","status":"Active"},
-  {"id":"ID007","citizenId":"C007","cardNumber":"KP1007","status":"Expired"},
-  {"id":"ID008","citizenId":"C008","cardNumber":"KP1008","status":"Active"}
+  { "id": "card-001", "citizen_id": "cit-001", "card_type": "FARMER", "status": "COLLECTED", "qr_hash": "abc123", "issued_at": "2026-05-15", "expires_at": "2031-05-15", "collected_at": "2026-05-20" },
+  { "id": "card-002", "citizen_id": "cit-003", "card_type": "SENIOR_CITIZEN", "status": "APPROVED", "qr_hash": "def456", "issued_at": "2026-06-01", "expires_at": "2031-06-01", "collected_at": null },
+  { "id": "card-003", "citizen_id": "cit-002", "card_type": "SINGLE_WOMAN", "status": "PENDING_APPROVAL", "qr_hash": "ghi789", "issued_at": null, "expires_at": null, "collected_at": null }
 ]

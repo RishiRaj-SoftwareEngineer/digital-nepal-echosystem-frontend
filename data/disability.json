@@ -1,10 +1,17 @@
 [
-  {"id":"DIS001","citizenId":"C001","type":"Physical","card":"A"},
-  {"id":"DIS002","citizenId":"C002","type":"Visual","card":"B"},
-  {"id":"DIS003","citizenId":"C003","type":"Hearing","card":"C"},
-  {"id":"DIS004","citizenId":"C004","type":"Physical","card":"A"},
-  {"id":"DIS005","citizenId":"C005","type":"Visual","card":"B"},
-  {"id":"DIS006","citizenId":"C006","type":"Hearing","card":"C"},
-  {"id":"DIS007","citizenId":"C007","type":"Physical","card":"A"},
-  {"id":"DIS008","citizenId":"C008","type":"Visual","card":"B"}
+  { "citizen_id": "cit-003", "disability_type": "PHYSICAL", "severity_body": 2, "severity_activity": 3, "severity_participation": 2, "certificate_no": "D-12345", "certificate_expiry": "2027-12-31" },
+  { "citizen_id": "cit-001", "disability_type": null, "severity_body": 0, "severity_activity": 0, "severity_participation": 0, "certificate_no": null }
 ]
+
+
+
+
+
+
+
+
+
+
+
+
+

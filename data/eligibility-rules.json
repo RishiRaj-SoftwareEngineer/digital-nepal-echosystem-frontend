@@ -1,10 +1,5 @@
 [
-  {"id":"ER001","benefit":"Senior Citizen","minimumAge":60},
-  {"id":"ER002","benefit":"Single Women","minimumAge":35},
-  {"id":"ER003","benefit":"Disability Support","minimumAge":0},
-  {"id":"ER004","benefit":"Child Grant","minimumAge":0},
-  {"id":"ER005","benefit":"Education Support","minimumAge":5},
-  {"id":"ER006","benefit":"Health Support","minimumAge":0},
-  {"id":"ER007","benefit":"Employment Support","minimumAge":18},
-  {"id":"ER008","benefit":"Housing Support","minimumAge":18}
+  { "id": "rule-001", "rule_name": "unemployed_age_18", "benefit_type": "UNEMPLOYMENT_ID", "condition_expression": { "field": "employment.category", "operator": "=", "value": "UNEMPLOYED", "and": { "field": "age", "operator": ">=", "value": 18 } }, "benefit_value": { "card_type": "UNEMPLOYMENT" }, "is_active": true, "priority": 10 },
+  { "id": "rule-002", "rule_name": "disability_severity_2_plus", "benefit_type": "DISABILITY_ID", "condition_expression": { "field": "disability.severity_body", "operator": ">=", "value": 2 }, "benefit_value": { "card_type": "DISABILITY" }, "is_active": true, "priority": 20 },
+  { "id": "rule-003", "rule_name": "senior_citizen_70", "benefit_type": "SENIOR_CITIZEN_ALLOWANCE", "condition_expression": { "field": "age", "operator": ">=", "value": 70 }, "benefit_value": { "amount": 4000, "frequency": "monthly" }, "is_active": true, "priority": 30 }
 ]
