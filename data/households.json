@@ -1,0 +1,4 @@
+[
+  { "id": "hh-101", "ward_id": "ward-004", "head_citizen_id": "cit-001", "monthly_income_band": "25K_50K", "poverty_class": "ABOVE", "house_type": "OWNED", "room_count": 4, "electricity": "GRID", "water_source": "PIPED" },
+  { "id": "hh-102", "ward_id": "ward-003", "head_citizen_id": "cit-003", "monthly_income_band": "10K_25K", "poverty_class": "NEAR", "house_type": "OWNED", "room_count": 2, "electricity": "SOLAR", "water_source": "WELL" }
+]

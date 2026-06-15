@@ -1,0 +1,4 @@
+[
+  { "id": "grv-001", "tracking_code": "GRV-2026-000001", "citizen_id": "cit-001", "category": "DATA_INACCURACY", "status": "IN_PROGRESS", "filed_at": "2026-06-01T10:00:00Z", "escalation_level": "WARD" },
+  { "id": "grv-002", "tracking_code": "GRV-2026-000002", "citizen_id": "cit-003", "category": "BENEFIT_DENIAL", "status": "REFERRED_JUDICIAL", "filed_at": "2026-05-28T09:00:00Z", "escalation_level": "NYAYIK_SAMITI" }
+]

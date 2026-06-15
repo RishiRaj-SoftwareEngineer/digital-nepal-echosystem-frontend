@@ -1,0 +1,80 @@
+[
+  {
+    "id": "user-ward-4",
+    "username": "ward4.kummayak",
+    "password": "ward4pass",
+    "full_name": "Dhana Raj Thapa",
+    "phone": "9812345678",
+    "role": "WARD_ADMIN",
+    "jurisdiction_type": "WARD",
+    "jurisdiction_id": "ward-004",
+    "is_active": true,
+    "failed_logins": 0,
+    "last_login": "2026-06-08T09:30:00Z"
+  },
+  {
+    "id": "user-ward-3",
+    "username": "ward3.kummayak",
+    "password": "ward3pass",
+    "full_name": "Sita Kumari Limbu",
+    "phone": "9812345679",
+    "role": "WARD_ADMIN",
+    "jurisdiction_type": "WARD",
+    "jurisdiction_id": "ward-003",
+    "is_active": true,
+    "failed_logins": 0,
+    "last_login": "2026-06-07T10:15:00Z"
+  },
+  {
+    "id": "user-ward-5",
+    "username": "ward5.kummayak",
+    "password": "ward5pass",
+    "full_name": "Ram Prasad Adhikari",
+    "phone": "9812345680",
+    "role": "WARD_ADMIN",
+    "jurisdiction_type": "WARD",
+    "jurisdiction_id": "ward-005",
+    "is_active": true,
+    "failed_logins": 2,
+    "last_login": "2026-06-06T08:45:00Z"
+  },
+  {
+    "id": "user-municipality",
+    "username": "kummayak.admin",
+    "password": "municipalitypass",
+    "full_name": "Bishnu Maya Kafle",
+    "phone": "9812345681",
+    "role": "LOCAL_BODY_ADMIN",
+    "jurisdiction_type": "MUNICIPALITY",
+    "jurisdiction_id": "mun-kummayak",
+    "is_active": true,
+    "failed_logins": 0,
+    "last_login": "2026-06-08T11:20:00Z"
+  },
+  {
+    "id": "user-province",
+    "username": "koshi.province",
+    "password": "provincepass",
+    "full_name": "Koshi Prasad Nepal",
+    "phone": "9812345682",
+    "role": "PROVINCE_ADMIN",
+    "jurisdiction_type": "PROVINCE",
+    "jurisdiction_id": "prov-koshi",
+    "is_active": true,
+    "failed_logins": 0,
+    "last_login": "2026-06-07T14:00:00Z"
+  },
+  {
+    "id": "user-central",
+    "username": "nepal.central",
+    "password": "centralpass",
+    "full_name": "Ganga Devi Sharma",
+    "phone": "9812345683",
+    "role": "CENTRAL_ADMIN",
+    "jurisdiction_type": "NATIONAL",
+    "jurisdiction_id": null,
+    "is_active": true,
+    "failed_logins": 0,
+    "last_login": "2026-06-08T08:00:00Z"
+  }
+]

@@ -1,0 +1,17 @@
+[
+  { "citizen_id": "cit-003", "disability_type": "PHYSICAL", "severity_body": 2, "severity_activity": 3, "severity_participation": 2, "certificate_no": "D-12345", "certificate_expiry": "2027-12-31" },
+  { "citizen_id": "cit-001", "disability_type": null, "severity_body": 0, "severity_activity": 0, "severity_participation": 0, "certificate_no": null }
+]
+
+
+
+
+
+
+
+
+
+
+
+
+

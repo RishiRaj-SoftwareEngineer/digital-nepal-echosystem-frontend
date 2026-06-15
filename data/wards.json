@@ -1,0 +1,11 @@
+[
+  { "id": "ward-001", "municipality_id": "mun-kummayak", "ward_no": 1, "name_np": "वडा नं १", "name_en": "Ward 1" },
+  { "id": "ward-002", "municipality_id": "mun-kummayak", "ward_no": 2, "name_np": "वडा नं २", "name_en": "Ward 2" },
+  { "id": "ward-003", "municipality_id": "mun-kummayak", "ward_no": 3, "name_np": "वडा नं ३", "name_en": "Ward 3" },
+  { "id": "ward-004", "municipality_id": "mun-kummayak", "ward_no": 4, "name_np": "वडा नं ४", "name_en": "Ward 4" },
+  { "id": "ward-005", "municipality_id": "mun-kummayak", "ward_no": 5, "name_np": "वडा नं ५", "name_en": "Ward 5" },
+  { "id": "ward-006", "municipality_id": "mun-kummayak", "ward_no": 6, "name_np": "वडा नं ६", "name_en": "Ward 6" },
+  { "id": "ward-007", "municipality_id": "mun-kummayak", "ward_no": 7, "name_np": "वडा नं ७", "name_en": "Ward 7" },
+  { "id": "ward-008", "municipality_id": "mun-kummayak", "ward_no": 8, "name_np": "वडा नं ८", "name_en": "Ward 8" },
+  { "id": "ward-009", "municipality_id": "mun-kummayak", "ward_no": 9, "name_np": "वडा नं ९", "name_en": "Ward 9" }
+]

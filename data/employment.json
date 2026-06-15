@@ -1,0 +1,6 @@
+[
+  { "citizen_id": "cit-001", "category": "FARMER", "sub_fields": { "land_ropani": 2.5, "crop": "rice", "irrigation": "canal" }, "income_band": "25K_50K" },
+  { "citizen_id": "cit-002", "category": "HOMEMAKER", "sub_fields": {}, "income_band": "10K_25K" },
+  { "citizen_id": "cit-003", "category": "UNEMPLOYED", "sub_fields": { "duration_months": 6, "skills": ["carpentry"] }, "income_band": "UNDER_5K" },
+  { "citizen_id": "cit-004", "category": "FOREIGN_ABROAD", "sub_fields": { "country_code": "AE", "visa_type": "WORK_PERMIT", "employer_name": "Dubai Const." }, "income_band": "50K_100K" }
+]

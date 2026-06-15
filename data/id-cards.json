@@ -1,0 +1,5 @@
+[
+  { "id": "card-001", "citizen_id": "cit-001", "card_type": "FARMER", "status": "COLLECTED", "qr_hash": "abc123", "issued_at": "2026-05-15", "expires_at": "2031-05-15", "collected_at": "2026-05-20" },
+  { "id": "card-002", "citizen_id": "cit-003", "card_type": "SENIOR_CITIZEN", "status": "APPROVED", "qr_hash": "def456", "issued_at": "2026-06-01", "expires_at": "2031-06-01", "collected_at": null },
+  { "id": "card-003", "citizen_id": "cit-002", "card_type": "SINGLE_WOMAN", "status": "PENDING_APPROVAL", "qr_hash": "ghi789", "issued_at": null, "expires_at": null, "collected_at": null }
+]
