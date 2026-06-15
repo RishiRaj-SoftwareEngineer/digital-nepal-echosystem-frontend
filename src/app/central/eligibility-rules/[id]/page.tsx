@@ -1,10 +1,10 @@
 "use client";
 
-import { useParams } from "next/navigation";
 import Link from "next/link";
-import rulesData from "@/data/eligibility-rules.json";
+import { useParams } from "next/navigation";
+import rulesData from "../../../../../data/eligibility-rules.json";
 
-/* ================= TYPES ================= */
+/* types */
 type Rule = {
   id: string;
   rule_name: string;
@@ -15,112 +15,226 @@ type Rule = {
   is_active: boolean;
 };
 
-/* ================= BADGES ================= */
-const badgeColors: Record<string, string> = {
-  UNEMPLOYMENT_ID: "bg-amber-100 text-amber-800",
-  DISABILITY_ID: "bg-blue-100 text-blue-800",
-  SENIOR_CITIZEN: "bg-green-100 text-green-800",
-  SINGLE_WOMAN: "bg-pink-100 text-pink-800",
-  FOOD_SUBSIDY: "bg-orange-100 text-orange-800",
-  HEALTH_INSURANCE: "bg-teal-100 text-teal-800",
-};
+const STORAGE_KEY = "eligibility_rules_state";
 
-/* ================= STABLE HASH (NO RANDOM) ================= */
-const hashString = (str: string): number => {
-  let hash = 0;
-  for (let i = 0; i < str.length; i++) {
-    hash = (hash * 31 + str.charCodeAt(i)) % 100000;
-  }
-  return hash;
-};
-
-export default function Page() {
+export default function RuleDetailPage() {
   const params = useParams();
-  const id = params?.id as string;
+  const ruleId = params.id as string;
 
-  const rule = (rulesData as Rule[]).find((r) => r.id === id);
+  /* Load rules (no useEffect, no state = no lint issues) */
+  const stored =
+    typeof window !== "undefined"
+      ? localStorage.getItem(STORAGE_KEY)
+      : null;
+
+  const allRules: Rule[] = stored
+    ? JSON.parse(stored)
+    : (rulesData as Rule[]);
+
+  const rule = allRules.find((r) => r.id === ruleId);
 
   if (!rule) {
     return (
       <div className="p-6">
-        <p>Rule not found</p>
-        <Link href="/central/eligibility-rules" className="text-blue-600">
-          ← Back
+        <h2 className="text-xl font-semibold text-red-600">
+          Rule not found
+        </h2>
+
+        <Link
+          href="/central/eligibility-rules"
+          className="text-blue-600 underline"
+        >
+          Back to Rules
         </Link>
       </div>
     );
   }
 
-  const affectedCitizens = hashString(rule.id);
+  /* FORMAT CONDITION */
+  const formatCondition = (
+    condition: Record<string, unknown>
+  ): string[] => {
+    const lines: string[] = [];
+
+    const field = condition.field;
+    const operator = condition.operator;
+    const value = condition.value;
+
+    if (field && operator && value !== undefined) {
+      lines.push(`${field} ${operator} ${value}`);
+    }
+
+    const andCondition = condition.and as
+      | Record<string, unknown>
+      | undefined;
+
+    if (andCondition) {
+      const af = andCondition.field;
+      const ao = andCondition.operator;
+      const av = andCondition.value;
+
+      if (af && ao && av !== undefined) {
+        lines.push(`${af} ${ao} ${av}`);
+      }
+    }
+
+    return lines;
+  };
+
+  /* FORMAT BENEFIT */
+  const formatBenefit = (
+    benefit: Record<string, unknown>
+  ): string[] => {
+    const lines: string[] = [];
+
+    if (benefit.card_type) {
+      lines.push(`Card Type: ${benefit.card_type}`);
+    }
+
+    if (benefit.amount) {
+      lines.push(`Amount: NPR ${benefit.amount}`);
+    }
+
+    if (benefit.frequency) {
+      lines.push(`Frequency: ${benefit.frequency}`);
+    }
+
+    return lines;
+  };
 
   return (
     <div className="p-6 bg-gray-50 min-h-screen text-gray-900">
-      {/* BACK */}
-      <Link
-        href="/central/eligibility-rules"
-        className="text-blue-600 hover:underline"
-      >
-        ← Back
-      </Link>
+      {/* Back */}
+      <div className="mb-6">
+        <Link
+          href="/central/eligibility-rules"
+          className="text-blue-600 hover:underline"
+        >
+          ← Back to Rules
+        </Link>
+      </div>
 
-      {/* TITLE */}
-      <h1 className="text-2xl font-bold mt-4">{rule.rule_name}</h1>
+      {/* HEADER */}
+      <div className="bg-white rounded-lg shadow p-6 mb-6">
+        <h1 className="text-2xl font-bold mb-4">
+          {rule.rule_name}
+        </h1>
 
-      {/* INFO GRID */}
-      <div className="grid grid-cols-2 gap-4 mt-6">
-        <div className="bg-white p-4 rounded shadow">
-          <p className="text-gray-500">Benefit Type</p>
-          <span
-            className={`px-2 py-1 rounded ${badgeColors[rule.benefit_type]}`}
-          >
-            {rule.benefit_type}
-          </span>
-        </div>
+        <div className="grid md:grid-cols-2 gap-4">
+          <div>
+            <p className="text-sm text-gray-500">
+              Benefit Type
+            </p>
+            <p className="font-medium">
+              {rule.benefit_type}
+            </p>
+          </div>
 
-        <div className="bg-white p-4 rounded shadow">
-          <p className="text-gray-500">Status</p>
-          <span
-            className={`px-2 py-1 rounded text-white ${
-              rule.is_active ? "bg-green-600" : "bg-gray-500"
-            }`}
-          >
-            {rule.is_active ? "Active" : "Inactive"}
-          </span>
-        </div>
+          <div>
+            <p className="text-sm text-gray-500">
+              Priority
+            </p>
+            <p className="font-medium">
+              {rule.priority}
+            </p>
+          </div>
 
-        <div className="bg-white p-4 rounded shadow">
-          <p className="text-gray-500">Priority</p>
-          <p>{rule.priority}</p>
-        </div>
+          <div>
+            <p className="text-sm text-gray-500">
+              Status
+            </p>
 
-        <div className="bg-white p-4 rounded shadow">
-          <p className="text-gray-500">Rule ID</p>
-          <p>{rule.id}</p>
+            <span
+              className={`inline-block px-3 py-1 rounded text-white text-sm ${
+                rule.is_active
+                  ? "bg-green-600"
+                  : "bg-gray-500"
+              }`}
+            >
+              {rule.is_active ? "Active" : "Inactive"}
+            </span>
+          </div>
         </div>
       </div>
 
       {/* CONDITION */}
-      <div className="bg-white p-4 rounded shadow mt-6">
-        <h2 className="font-bold mb-2">Condition</h2>
-        <pre className="bg-gray-100 p-3 rounded text-sm">
-          {JSON.stringify(rule.condition_expression, null, 2)}
-        </pre>
+      <div className="bg-white rounded-lg shadow p-6 mb-6">
+        <h2 className="text-lg font-semibold mb-4">
+          Condition
+        </h2>
+
+        <div className="space-y-2">
+          {formatCondition(
+            rule.condition_expression
+          ).map((item, i) => (
+            <p key={i}>{item}</p>
+          ))}
+        </div>
       </div>
 
       {/* BENEFIT */}
-      <div className="bg-white p-4 rounded shadow mt-6">
-        <h2 className="font-bold mb-2">Benefit</h2>
-        <pre className="bg-gray-100 p-3 rounded text-sm">
-          {JSON.stringify(rule.benefit_value, null, 2)}
-        </pre>
+      <div className="bg-white rounded-lg shadow p-6 mb-6">
+        <h2 className="text-lg font-semibold mb-4">
+          Benefit
+        </h2>
+
+        <div className="space-y-2">
+          {formatBenefit(rule.benefit_value).map(
+            (item, i) => (
+              <p key={i}>{item}</p>
+            )
+          )}
+        </div>
       </div>
 
-      {/* IMPACT */}
-      <div className="bg-white p-4 rounded shadow mt-6">
-        <h2 className="font-bold mb-2">Impact</h2>
-        <p>
-          Estimated affected citizens:{" "}
-          <span className="font-bold">{affectedCitizens}</span>
+      {/* HISTORY */}
+      <div className="bg-white rounded-lg shadow p-6 mb-6">
+        <h2 className="text-lg font-semibold mb-4">
+          Change History
+        </h2>
+
+        <div className="space-y-3">
+          <div className="border-b pb-2">
+            <p className="font-medium">
+              Created by Central Admin
+            </p>
+            <p className="text-sm text-gray-500">
+              2026-06-01 09:15 AM
+            </p>
+          </div>
+
+          <div className="border-b pb-2">
+            <p className="font-medium">
+              Priority Updated
+            </p>
+            <p className="text-sm text-gray-500">
+              2026-06-03 11:30 AM
+            </p>
+          </div>
+
+          <div>
+            <p className="font-medium">
+              Status Changed
+            </p>
+            <p className="text-sm text-gray-500">
+              2026-06-05 02:45 PM
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* AFFECTED CITIZENS */}
+      <div className="bg-white rounded-lg shadow p-6">
+        <h2 className="text-lg font-semibold mb-4">
+          Affected Citizens
+        </h2>
+
+        <p className="text-3xl font-bold text-blue-600">
+          12,450
+        </p>
+
+        <p className="text-sm text-gray-500 mt-2">
+          Estimated citizens matching this rule.
         </p>
       </div>
     </div>
