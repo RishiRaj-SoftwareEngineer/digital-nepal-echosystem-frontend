@@ -1,0 +1,4 @@
+[
+  { "id": "edit-001", "citizen_id": "cit-001", "submitter_id": "user-ward-4", "status": "PENDING_APPROVAL", "old_value_json": { "tole": "Old Tole" }, "new_value_json": { "tole": "Bhagwati Tole" }, "submitted_at": "2026-06-07T14:30:00Z" },
+  { "id": "edit-002", "citizen_id": "cit-002", "submitter_id": "user-ward-4", "status": "CAO_REVIEW", "old_value_json": { "phone": "9800000000" }, "new_value_json": { "phone": "9812345678" }, "submitted_at": "2026-05-25T11:00:00Z", "escalated_at": "2026-06-01T00:00:00Z" }
+]

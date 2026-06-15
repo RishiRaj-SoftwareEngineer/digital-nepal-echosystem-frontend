@@ -1,0 +1,5 @@
+[
+  { "id": "rule-001", "rule_name": "unemployed_age_18", "benefit_type": "UNEMPLOYMENT_ID", "condition_expression": { "field": "employment.category", "operator": "=", "value": "UNEMPLOYED", "and": { "field": "age", "operator": ">=", "value": 18 } }, "benefit_value": { "card_type": "UNEMPLOYMENT" }, "is_active": true, "priority": 10 },
+  { "id": "rule-002", "rule_name": "disability_severity_2_plus", "benefit_type": "DISABILITY_ID", "condition_expression": { "field": "disability.severity_body", "operator": ">=", "value": 2 }, "benefit_value": { "card_type": "DISABILITY" }, "is_active": true, "priority": 20 },
+  { "id": "rule-003", "rule_name": "senior_citizen_70", "benefit_type": "SENIOR_CITIZEN_ALLOWANCE", "condition_expression": { "field": "age", "operator": ">=", "value": 70 }, "benefit_value": { "amount": 4000, "frequency": "monthly" }, "is_active": true, "priority": 30 }
+]
