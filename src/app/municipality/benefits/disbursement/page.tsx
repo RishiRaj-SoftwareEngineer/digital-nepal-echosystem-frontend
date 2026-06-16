@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 
 type Disbursement = {
@@ -26,7 +26,7 @@ type FormState = {
   notes: string;
 };
 
-export default function DisbursementPage() {
+ function DisbursementContent() {
   const searchParams = useSearchParams();
 
   const citizenId = searchParams.get("citizen") || "";
@@ -269,5 +269,12 @@ export default function DisbursementPage() {
         </table>
       </div>
     </div>
+  );
+}
+export default function DisbursementPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <DisbursementContent />
+    </Suspense>
   );
 }
