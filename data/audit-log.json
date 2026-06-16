@@ -1,0 +1,47 @@
+[
+  {
+    "id": "event-001",
+    "event_type": "REGISTERED",
+    "citizen_id": "citizen-1234567890",
+    "acted_by_role": "WARD_ADMIN",
+    "jurisdiction": "Ward 5",
+    "timestamp": "2026-08-10T09:15:00Z",
+    "ip_hash": "a7f92bc11d"
+  },
+  {
+    "id": "event-002",
+    "event_type": "UPDATED",
+    "citizen_id": "citizen-9876543210",
+    "acted_by_role": "MUNICIPAL_ADMIN",
+    "jurisdiction": "Kathmandu Municipality",
+    "timestamp": "2026-08-10T10:20:00Z",
+    "ip_hash": "e2ab88cd45"
+  },
+  {
+    "id": "event-003",
+    "event_type": "APPROVED",
+    "citizen_id": "citizen-5556667777",
+    "acted_by_role": "PROVINCE_ADMIN",
+    "jurisdiction": "Bagmati Province",
+    "timestamp": "2026-08-10T11:45:00Z",
+    "ip_hash": "d12fe98ab1"
+  },
+  {
+    "id": "event-004",
+    "event_type": "REJECTED",
+    "citizen_id": "citizen-1112223333",
+    "acted_by_role": "WARD_ADMIN",
+    "jurisdiction": "Ward 7",
+    "timestamp": "2026-08-10T12:10:00Z",
+    "ip_hash": "c88d7721ef"
+  },
+  {
+    "id": "event-005",
+    "event_type": "ID_CARD_ISSUED",
+    "citizen_id": "citizen-4445556666",
+    "acted_by_role": "CENTRAL_ADMIN",
+    "jurisdiction": "National",
+    "timestamp": "2026-08-10T01:30:00Z",
+    "ip_hash": "9abf6632de"
+  }
+]
