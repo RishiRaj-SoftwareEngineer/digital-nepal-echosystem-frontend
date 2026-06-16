@@ -1,24 +1,46 @@
+"use client";
+
+import { useState, ReactNode } from "react";
+
+type Tab = {
+  label: string;
+  content: ReactNode;
+};
+
 type TabsProps = {
-  tabs: string[];
-  activeTab: string;
-  onChange: (tab: string) => void;
+  tabs: Tab[];
+  defaultTab?: number;
 };
 
 export function Tabs({
   tabs,
-  activeTab,
-  onChange,
+  defaultTab = 0,
 }: TabsProps) {
+  const [activeTab, setActiveTab] = useState(defaultTab);
+
   return (
-    <div className="flex gap-2">
-      {tabs.map((tab) => (
-        <button
-          key={tab}
-          onClick={() => onChange(tab)}
-        >
-          {tab}
-        </button>
-      ))}
+    <div>
+      {/* Tab List */}
+      <div className="flex border-b">
+        {tabs.map((tab, index) => (
+          <button
+            key={index}
+            onClick={() => setActiveTab(index)}
+            className={`px-4 py-2 font-medium ${
+              activeTab === index
+                ? "border-b-2 border-blue-500 text-blue-600"
+                : "text-gray-500"
+            }`}
+          >
+            {tab.label}
+          </button>
+        ))}
+      </div>
+
+      {/* Tab Panel */}
+      <div className="mt-4">
+        {tabs[activeTab]?.content}
+      </div>
     </div>
   );
 }
