@@ -1,16 +1,7 @@
-import type { ReactNode } from 'react';
+type BadgeProps = {
+  status: "SYNCED" | "PENDING" | "CONFLICT" | "VERIFIED" | "ARCHIVED";
+};
 
-interface BadgeProps {
-  children: ReactNode;
-  className?: string;
-}
-
-export default function Badge({ children, className = '' }: BadgeProps) {
-  return (
-    <span
-      className={`inline-block px-2.5 py-0.5 rounded-full text-xs font-medium ${className}`}
-    >
-      {children}
-    </span>
-  );
+export function Badge({ status }: BadgeProps) {
+  return <span>{status}</span>;
 }
