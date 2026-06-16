@@ -1,7 +1,7 @@
-import citizens from "@/data/citizens.json";
-import wards from "@/data/wards.json";
-import idCards from "@/data/id-cards.json";
-import syncBatches from "@/data/sync-batches.json";
+import citizens from "../../../../data/citizens.json";
+import wards from "../../../../data/wards.json";
+import idCards from "../../../..//data/id-cards.json";
+import syncBatches from "../../../../data/sync-batches.json";
 
 export default function ProvinceDashboard() {
   const stats = {
