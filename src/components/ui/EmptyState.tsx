@@ -1,20 +1,19 @@
-type EmptyStateProps = {
+interface EmptyStateProps {
   icon?: React.ReactNode;
-  message: string;
+  message?: string;
   ctaText?: string;
   onCtaClick?: () => void;
-};
+}
 
-export function EmptyState({
+export default function EmptyState({
   icon,
-  message,
+  message = "No data found",
   ctaText,
   onCtaClick,
 }: EmptyStateProps) {
   return (
-    <div className="text-center p-6">
+    <div className="px-4 py-8 text-center text-gray-500">
       {icon}
-
       <p>{message}</p>
 
       {ctaText && (

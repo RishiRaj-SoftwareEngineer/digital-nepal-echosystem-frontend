@@ -1,27 +1,35 @@
-type ModalProps = {
+'use client';
+import type { ReactNode } from 'react';
+
+interface ModalProps {
   open: boolean;
   onClose: () => void;
+  children: ReactNode;
   title?: string;
-  size?: "sm" | "md" | "lg" | "fullscreen";
-  children: React.ReactNode;
-};
+  size?: 'sm' | 'md' | 'lg' | 'fullscreen';
+}
 
-export function Modal({
+export default function Modal({
   open,
   onClose,
-  title,
-  size = "md",
   children,
+  title,
 }: ModalProps) {
   if (!open) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/50 flex items-center justify-center">
-      <div className="bg-white rounded p-6">
-        <div className="flex justify-between mb-4">
-          <h2>{title}</h2>
-          <button onClick={onClose}>✕</button>
-        </div>
+    <div className="fixed inset-0 z-50 flex items-center justify-center">
+      <div
+        className="fixed inset-0 bg-black/50"
+        onClick={onClose}
+      />
+
+      <div className="relative bg-white rounded-2xl shadow-xl p-6 w-full max-w-md mx-4 z-10">
+        {title && (
+          <h3 className="text-lg font-semibold text-gray-900 mb-4">
+            {title}
+          </h3>
+        )}
 
         {children}
       </div>

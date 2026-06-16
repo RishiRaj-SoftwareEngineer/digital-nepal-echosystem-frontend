@@ -1,14 +1,14 @@
-// Day 2 Work
+// Day 2
 export { Button } from "./Button";
 export { Input } from "./Input";
 export { Badge } from "./Badge";
 export { Spinner } from "./Spinner";
 export { Avatar } from "./Avatar";
 
-// Day 3 Work
-export { Card } from "./Card";
-export { Modal } from "./Modal";
-export { Table } from "./Table";
+// Day 3
+export { default as Card } from "./Card";
+export { default as Modal } from "./Modal";
+export { default as Table } from "./Table";
 export { Tabs } from "./Tabs";
 export { Pagination } from "./Pagination";
-export { EmptyState } from "./EmptyState";
+export { default as EmptyState } from "./EmptyState";
