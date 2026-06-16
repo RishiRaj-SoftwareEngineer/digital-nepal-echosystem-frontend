@@ -1,11 +1,7 @@
-interface SpinnerProps {
-  className?: string;
-}
+type SpinnerProps = {
+  size?: "sm" | "md" | "lg";
+};
 
-export default function Spinner({ className = '' }: SpinnerProps) {
-  return (
-    <div
-      className={`inline-block w-5 h-5 border-2 border-gray-300 border-t-blue-600 rounded-full animate-spin ${className}`}
-    />
-  );
+export function Spinner({ size = "md" }: SpinnerProps) {
+  return <div>Loading ({size})</div>;
 }

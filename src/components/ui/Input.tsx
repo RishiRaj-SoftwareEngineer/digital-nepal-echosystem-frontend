@@ -1,10 +1,37 @@
-import type { InputHTMLAttributes } from 'react';
+import React from "react";
 
-export default function Input({ className = '', ...props }: InputHTMLAttributes<HTMLInputElement>) {
+type InputProps = {
+  label?: string;
+  placeholder?: string;
+  error?: string;
+  disabled?: boolean;
+  leftIcon?: React.ReactNode;
+  rightIcon?: React.ReactNode;
+};
+
+export function Input({
+  label,
+  placeholder,
+  error,
+  disabled,
+  leftIcon,
+  rightIcon,
+}: InputProps) {
   return (
-    <input
-      className={`w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 ${className}`}
-      {...props}
-    />
+    <div>
+      {label && <label>{label}</label>}
+
+      <div className="flex items-center border rounded px-2">
+        {leftIcon}
+        <input
+          placeholder={placeholder}
+          disabled={disabled}
+          className="flex-1 outline-none"
+        />
+        {rightIcon}
+      </div>
+
+      {error && <p className="text-red-500">{error}</p>}
+    </div>
   );
 }
