@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import type { Citizen } from "@/types/citizen";
 import citizensRaw from "../../data/citizens.json";
-import { getWardStats } from "../../lib/utils";
+import { getWardStats } from "@lib/utils";
 
 const citizens = citizensRaw as unknown as Citizen[];
 
