@@ -14,7 +14,7 @@ interface SyncBatch {
 }
 
 export default function SyncStatusPage() {
-  const [syncBatches] = useState<SyncBatch[]>(syncBatchesData)
+  const [syncBatches] = useState<SyncBatch[]>(syncBatchesData as SyncBatch[]);
 
 
   const getStatusBadge = (status: string) => {
