@@ -12,3 +12,10 @@ export { default as Table } from "./Table";
 export { Tabs } from "./Tabs";
 export { Pagination } from "./Pagination";
 export { default as EmptyState } from "./EmptyState";
+
+// Day 4
+export { default as Sidebar } from './Sidebar';
+export { default as Navbar } from './Navbar';
+export { TierBadge } from './TierBadge';
+export { default as DashboardLayout } from './DashboardLayout';
+export { default as StatCard } from './StatCard';
