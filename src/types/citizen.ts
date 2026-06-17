@@ -43,6 +43,7 @@ export type ConsentChannel =
   | "OTHER";
 
 export const EMPLOYMENT_CATEGORIES: EmploymentCategory[] = [
+<<<<<<< HEAD
   "FARMER", "GOVERNMENT", "PRIVATE", "BUSINESS", "STUDENT",
   "UNEMPLOYED", "FOREIGN_ABROAD", "HOMEMAKER", "RETIRED", "OTHER",
 ];
@@ -82,10 +83,20 @@ export interface EmploymentData {
 export const SYNC_STATUSES: SyncStatus[] = [
   "synced", "pending", "failed",
 ];
-
-export const SEXES: Sex[] = [
-  "MALE", "FEMALE", "OTHER",
+=======
+  "FARMER",
+  "BUSINESS",
+  "GOVERNMENT_EMPLOYEE",
+  "PRIVATE_EMPLOYEE",
+  "STUDENT",
+  "UNEMPLOYED",
+  "OTHER",
 ];
+
+export const SYNC_STATUSES: SyncStatus[] = ["synced", "pending", "failed"];
+>>>>>>> 3684d1cbd3194cc582589a3010a05bf7e3fec848
+
+export const SEXES: Sex[] = ["MALE", "FEMALE", "OTHER"];
 
 export const DIGITAL_LITERACIES: DigitalLiteracy[] = [
   "BASIC", "INTERMEDIATE", "ADVANCED", "NONE",
@@ -152,5 +163,9 @@ export interface RegistrationFormData {
   mother: FamilyMember | null;
   spouse: FamilyMember | null;
   children: FamilyMember[];
+<<<<<<< HEAD
   employment: EmploymentData;
 }
+=======
+}
+>>>>>>> 3684d1cbd3194cc582589a3010a05bf7e3fec848

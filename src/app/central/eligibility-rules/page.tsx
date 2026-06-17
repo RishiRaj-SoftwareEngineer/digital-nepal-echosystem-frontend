@@ -47,10 +47,8 @@ export default function Page() {
 
     setData((prev) =>
       prev.map((r) =>
-        r.id === selectedRule.id
-          ? { ...r, is_active: !r.is_active }
-          : r
-      )
+        r.id === selectedRule.id ? { ...r, is_active: !r.is_active } : r,
+      ),
     );
 
     setShowModal(false);
@@ -89,9 +87,7 @@ export default function Page() {
 
   return (
     <div className="p-6 bg-gray-50 min-h-screen text-gray-900">
-      <h1 className="text-2xl font-bold mb-6">
-        Eligibility Rules
-      </h1>
+      <h1 className="text-2xl font-bold mb-6">Eligibility Rules</h1>
 
       {/* TABLE */}
       <div className="bg-white shadow rounded-lg overflow-x-auto">
@@ -109,16 +105,11 @@ export default function Page() {
           <tbody>
             {data.map((rule, index) => (
               <tr key={rule.id} className="border-t">
-
                 {/* Rule */}
-                <td className="p-3 font-medium">
-                  {rule.rule_name}
-                </td>
+                <td className="p-3 font-medium">{rule.rule_name}</td>
 
                 {/* Type */}
-                <td className="p-3">
-                  {rule.benefit_type}
-                </td>
+                <td className="p-3">{rule.benefit_type}</td>
 
                 {/* Priority */}
                 <td className="p-3">
@@ -126,12 +117,8 @@ export default function Page() {
                     {rule.priority}
 
                     <div className="flex flex-col text-xs">
-                      <button onClick={() => moveUp(index)}>
-                        ▲
-                      </button>
-                      <button onClick={() => moveDown(index)}>
-                        ▼
-                      </button>
+                      <button onClick={() => moveUp(index)}>▲</button>
+                      <button onClick={() => moveDown(index)}>▼</button>
                     </div>
                   </div>
                 </td>
@@ -141,22 +128,16 @@ export default function Page() {
                   <button
                     onClick={() => handleToggleClick(rule)}
                     className={`px-3 py-1 rounded text-white text-sm ${
-                      rule.is_active
-                        ? "bg-green-600"
-                        : "bg-gray-500"
+                      rule.is_active ? "bg-green-600" : "bg-gray-500"
                     }`}
                   >
-                    {rule.is_active
-                      ? "Active"
-                      : "Inactive"}
+                    {rule.is_active ? "Active" : "Inactive"}
                   </button>
                 </td>
 
                 {/* View */}
                 <td className="p-3 text-blue-600 hover:underline">
-                  <Link
-                    href={`/central/eligibility-rules/${rule.id}`}
-                  >
+                  <Link href={`/central/eligibility-rules/${rule.id}`}>
                     View
                   </Link>
                 </td>
@@ -170,7 +151,6 @@ export default function Page() {
       {showModal && selectedRule && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center">
           <div className="bg-white p-6 rounded w-[420px]">
-
             <p className="mb-4">
               {selectedRule.is_active
                 ? `Disabling this rule will stop automatic eligibility detection for ${selectedRule.benefit_type}. Confirm?`
@@ -178,11 +158,7 @@ export default function Page() {
             </p>
 
             <div className="flex justify-end gap-2">
-              <button
-                onClick={() => setShowModal(false)}
-              >
-                Cancel
-              </button>
+              <button onClick={() => setShowModal(false)}>Cancel</button>
 
               <button
                 onClick={confirmToggle}
@@ -191,7 +167,6 @@ export default function Page() {
                 Confirm
               </button>
             </div>
-
           </div>
         </div>
       )}

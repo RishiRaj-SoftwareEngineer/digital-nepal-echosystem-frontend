@@ -23,22 +23,16 @@ export default function RuleDetailPage() {
 
   /* Load rules (no useEffect, no state = no lint issues) */
   const stored =
-    typeof window !== "undefined"
-      ? localStorage.getItem(STORAGE_KEY)
-      : null;
+    typeof window !== "undefined" ? localStorage.getItem(STORAGE_KEY) : null;
 
-  const allRules: Rule[] = stored
-    ? JSON.parse(stored)
-    : (rulesData as Rule[]);
+  const allRules: Rule[] = stored ? JSON.parse(stored) : (rulesData as Rule[]);
 
   const rule = allRules.find((r) => r.id === ruleId);
 
   if (!rule) {
     return (
       <div className="p-6">
-        <h2 className="text-xl font-semibold text-red-600">
-          Rule not found
-        </h2>
+        <h2 className="text-xl font-semibold text-red-600">Rule not found</h2>
 
         <Link
           href="/central/eligibility-rules"
@@ -51,9 +45,7 @@ export default function RuleDetailPage() {
   }
 
   /* FORMAT CONDITION */
-  const formatCondition = (
-    condition: Record<string, unknown>
-  ): string[] => {
+  const formatCondition = (condition: Record<string, unknown>): string[] => {
     const lines: string[] = [];
 
     const field = condition.field;
@@ -64,9 +56,7 @@ export default function RuleDetailPage() {
       lines.push(`${field} ${operator} ${value}`);
     }
 
-    const andCondition = condition.and as
-      | Record<string, unknown>
-      | undefined;
+    const andCondition = condition.and as Record<string, unknown> | undefined;
 
     if (andCondition) {
       const af = andCondition.field;
@@ -82,9 +72,7 @@ export default function RuleDetailPage() {
   };
 
   /* FORMAT BENEFIT */
-  const formatBenefit = (
-    benefit: Record<string, unknown>
-  ): string[] => {
+  const formatBenefit = (benefit: Record<string, unknown>): string[] => {
     const lines: string[] = [];
 
     if (benefit.card_type) {
@@ -116,39 +104,25 @@ export default function RuleDetailPage() {
 
       {/* HEADER */}
       <div className="bg-white rounded-lg shadow p-6 mb-6">
-        <h1 className="text-2xl font-bold mb-4">
-          {rule.rule_name}
-        </h1>
+        <h1 className="text-2xl font-bold mb-4">{rule.rule_name}</h1>
 
         <div className="grid md:grid-cols-2 gap-4">
           <div>
-            <p className="text-sm text-gray-500">
-              Benefit Type
-            </p>
-            <p className="font-medium">
-              {rule.benefit_type}
-            </p>
+            <p className="text-sm text-gray-500">Benefit Type</p>
+            <p className="font-medium">{rule.benefit_type}</p>
           </div>
 
           <div>
-            <p className="text-sm text-gray-500">
-              Priority
-            </p>
-            <p className="font-medium">
-              {rule.priority}
-            </p>
+            <p className="text-sm text-gray-500">Priority</p>
+            <p className="font-medium">{rule.priority}</p>
           </div>
 
           <div>
-            <p className="text-sm text-gray-500">
-              Status
-            </p>
+            <p className="text-sm text-gray-500">Status</p>
 
             <span
               className={`inline-block px-3 py-1 rounded text-white text-sm ${
-                rule.is_active
-                  ? "bg-green-600"
-                  : "bg-gray-500"
+                rule.is_active ? "bg-green-600" : "bg-gray-500"
               }`}
             >
               {rule.is_active ? "Active" : "Inactive"}
@@ -159,14 +133,10 @@ export default function RuleDetailPage() {
 
       {/* CONDITION */}
       <div className="bg-white rounded-lg shadow p-6 mb-6">
-        <h2 className="text-lg font-semibold mb-4">
-          Condition
-        </h2>
+        <h2 className="text-lg font-semibold mb-4">Condition</h2>
 
         <div className="space-y-2">
-          {formatCondition(
-            rule.condition_expression
-          ).map((item, i) => (
+          {formatCondition(rule.condition_expression).map((item, i) => (
             <p key={i}>{item}</p>
           ))}
         </div>
@@ -174,64 +144,42 @@ export default function RuleDetailPage() {
 
       {/* BENEFIT */}
       <div className="bg-white rounded-lg shadow p-6 mb-6">
-        <h2 className="text-lg font-semibold mb-4">
-          Benefit
-        </h2>
+        <h2 className="text-lg font-semibold mb-4">Benefit</h2>
 
         <div className="space-y-2">
-          {formatBenefit(rule.benefit_value).map(
-            (item, i) => (
-              <p key={i}>{item}</p>
-            )
-          )}
+          {formatBenefit(rule.benefit_value).map((item, i) => (
+            <p key={i}>{item}</p>
+          ))}
         </div>
       </div>
 
       {/* HISTORY */}
       <div className="bg-white rounded-lg shadow p-6 mb-6">
-        <h2 className="text-lg font-semibold mb-4">
-          Change History
-        </h2>
+        <h2 className="text-lg font-semibold mb-4">Change History</h2>
 
         <div className="space-y-3">
           <div className="border-b pb-2">
-            <p className="font-medium">
-              Created by Central Admin
-            </p>
-            <p className="text-sm text-gray-500">
-              2026-06-01 09:15 AM
-            </p>
+            <p className="font-medium">Created by Central Admin</p>
+            <p className="text-sm text-gray-500">2026-06-01 09:15 AM</p>
           </div>
 
           <div className="border-b pb-2">
-            <p className="font-medium">
-              Priority Updated
-            </p>
-            <p className="text-sm text-gray-500">
-              2026-06-03 11:30 AM
-            </p>
+            <p className="font-medium">Priority Updated</p>
+            <p className="text-sm text-gray-500">2026-06-03 11:30 AM</p>
           </div>
 
           <div>
-            <p className="font-medium">
-              Status Changed
-            </p>
-            <p className="text-sm text-gray-500">
-              2026-06-05 02:45 PM
-            </p>
+            <p className="font-medium">Status Changed</p>
+            <p className="text-sm text-gray-500">2026-06-05 02:45 PM</p>
           </div>
         </div>
       </div>
 
       {/* AFFECTED CITIZENS */}
       <div className="bg-white rounded-lg shadow p-6">
-        <h2 className="text-lg font-semibold mb-4">
-          Affected Citizens
-        </h2>
+        <h2 className="text-lg font-semibold mb-4">Affected Citizens</h2>
 
-        <p className="text-3xl font-bold text-blue-600">
-          12,450
-        </p>
+        <p className="text-3xl font-bold text-blue-600">12,450</p>
 
         <p className="text-sm text-gray-500 mt-2">
           Estimated citizens matching this rule.
