@@ -172,10 +172,17 @@ export default function Page() {
                 </td>
                 <td className="border p-2 text-center">
                   <Link
-                    href={`/benefits/initiate/${citizen.id}`}
+                    href={`/municipality/benefits/initiate/${citizen.id}`}
                     className="bg-blue-500 text-white px-3 py-1 rounded"
                   >
                     Initiate ID Card
+                  </Link>
+
+                  <Link
+                    href={`/municipality/benefits/disbursement?citizen=${citizen.id}`}
+                    className="inline-block bg-green-700 border-white text-white px-2 py-1 rounded"
+                  >
+                    Disburse
                   </Link>
                 </td>
               </tr>

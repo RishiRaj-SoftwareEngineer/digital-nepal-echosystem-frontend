@@ -14,10 +14,12 @@ export default function ProvinceDashboard() {
   return (
     <div>
       <h1 className="text-center text-3xl font-bold">Province Dashboard</h1>
+
       <h2 className="text-center italic">
         Province Admin — Analytical View Only. No write access to citizen
         records
       </h2>
+
       <div className="grid grid-cols-4 gap-4 mt-6">
         <div>Total Citizens: {stats.TotalCitizens}</div>
         <div>Total Municipalities: {stats.TotalMunicipalities}</div>
@@ -29,6 +31,7 @@ export default function ProvinceDashboard() {
         <h2>Recent Activity</h2>
 
         <h4>Recent Sync Batches</h4>
+
         <ul>
           {syncBatches.slice(0, 5).map((batch) => (
             <li key={batch.batch_id}>
