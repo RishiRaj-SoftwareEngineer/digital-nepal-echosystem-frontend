@@ -5,6 +5,7 @@ type StepIndicatorProps = {
 const STEPS = [
   { num: 1, label: "Personal Info" },
   { num: 2, label: "Family Tree" },
+  { num: 3, label: "Employment" },
 ];
 
 export function StepIndicator({ currentStep }: StepIndicatorProps) {

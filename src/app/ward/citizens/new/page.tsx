@@ -11,6 +11,7 @@ import {
 } from '@/types/citizen';
 import { classNames } from '@/utils';
 import { InputField, SelectField, StepIndicator, SectionCard, FormRow, FamilyMemberCard } from '@/components/ui';
+import { EmploymentForm } from '@/components/EmploymentForm';
 
 export default function NewCitizenPage() {
   const {
@@ -28,6 +29,7 @@ export default function NewCitizenPage() {
     updateChild,
     removeChild,
     updateConsentTimestamp,
+    updateEmploymentField,
     nextStep,
     prevStep,
     resetForm,
@@ -446,6 +448,61 @@ export default function NewCitizenPage() {
               </div>
             </div>
           </SectionCard>
+
+          <div className="flex items-center justify-between">
+            <button
+              type="button"
+              onClick={prevStep}
+              className="inline-flex items-center gap-2 px-6 py-2.5 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+              Back
+            </button>
+
+            <div className="flex gap-3">
+              <button
+                type="button"
+                onClick={resetForm}
+                className="px-6 py-2.5 border border-gray-300 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-50 transition-colors"
+              >
+                Reset
+              </button>
+              <button
+                type="button"
+                onClick={nextStep}
+                className="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-2.5 rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors"
+              >
+                Next: Employment
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  alert('Citizen registered successfully! (mock)');
+                  resetForm();
+                }}
+                className="inline-flex items-center gap-2 bg-emerald-600 text-white px-6 py-2.5 rounded-lg text-sm font-medium hover:bg-emerald-700 transition-colors"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+                Register Citizen
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {step === 3 && (
+        <div>
+          <EmploymentForm
+            employment={formData.employment}
+            onChange={updateEmploymentField}
+          />
 
           <div className="flex items-center justify-between">
             <button
