@@ -6,12 +6,23 @@ export type DigitalLiteracy = "BASIC" | "INTERMEDIATE" | "ADVANCED" | "NONE";
 
 export type EmploymentCategory =
   | "FARMER"
+  | "GOVERNMENT"
+  | "PRIVATE"
   | "BUSINESS"
-  | "GOVERNMENT_EMPLOYEE"
-  | "PRIVATE_EMPLOYEE"
   | "STUDENT"
   | "UNEMPLOYED"
+  | "FOREIGN_ABROAD"
+  | "HOMEMAKER"
+  | "RETIRED"
   | "OTHER";
+
+export type IncomeBand =
+  | "UNDER_5K"
+  | "5K_10K"
+  | "10K_25K"
+  | "25K_50K"
+  | "50K_100K"
+  | "OVER_100K";
 
 export type BloodGroup =
   | "A_POS" | "A_NEG"
@@ -31,10 +42,42 @@ export type ConsentChannel =
   | "VERBAL_WITNESS"
   | "OTHER";
 
-export const EMPLOYMENT_CATEGORIES:  EmploymentCategory[] = [
-  "FARMER", "BUSINESS", "GOVERNMENT_EMPLOYEE", "PRIVATE_EMPLOYEE",
-  "STUDENT", "UNEMPLOYED", "OTHER",
+export const EMPLOYMENT_CATEGORIES: EmploymentCategory[] = [
+  "FARMER", "GOVERNMENT", "PRIVATE", "BUSINESS", "STUDENT",
+  "UNEMPLOYED", "FOREIGN_ABROAD", "HOMEMAKER", "RETIRED", "OTHER",
 ];
+
+export const INCOME_BANDS: IncomeBand[] = [
+  "UNDER_5K", "5K_10K", "10K_25K", "25K_50K", "50K_100K", "OVER_100K",
+];
+
+export interface EmploymentData {
+  category: EmploymentCategory | "";
+  income_band: IncomeBand | "";
+  unemployed_duration_months: number;
+  unemployed_skills: string[];
+  unemployed_office_registered: boolean;
+  farmer_land_area_ropani: string;
+  farmer_land_type: string;
+  farmer_primary_crop: string;
+  farmer_irrigation_type: string;
+  farmer_agri_loan: boolean;
+  foreign_country: string;
+  foreign_visa_type: string;
+  foreign_employer_name: string;
+  foreign_departure_date: string;
+  foreign_expected_return: string;
+  foreign_remittance_band: string;
+  foreign_doe_registered: boolean;
+  gov_ministry: string;
+  gov_grade: string;
+  gov_posting_district: string;
+  gov_service_entry_year: string;
+  student_institution: string;
+  student_level: string;
+  student_field_of_study: string;
+  student_abroad: boolean;
+}
 
 export const SYNC_STATUSES: SyncStatus[] = [
   "synced", "pending", "failed",
@@ -109,4 +152,5 @@ export interface RegistrationFormData {
   mother: FamilyMember | null;
   spouse: FamilyMember | null;
   children: FamilyMember[];
+  employment: EmploymentData;
 }
