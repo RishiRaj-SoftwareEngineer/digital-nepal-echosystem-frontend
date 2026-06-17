@@ -1,0 +1,16 @@
+ [
+  { "id": "dist-01", "province_id": "prov-1", "name_np": "ताप्लेजुङ", "name_en": "Taplejung" },
+  { "id": "dist-02", "province_id": "prov-1", "name_np": "पाँचथर", "name_en": "Panchthar" },
+  { "id": "dist-03", "province_id": "prov-1", "name_np": "इलाम", "name_en": "Ilam" },
+  { "id": "dist-04", "province_id": "prov-1", "name_np": "झापा", "name_en": "Jhapa" },
+  { "id": "dist-05", "province_id": "prov-1", "name_np": "मोरङ", "name_en": "Morang" },
+  { "id": "dist-06", "province_id": "prov-1", "name_np": "सुनसरी", "name_en": "Sunsari" },
+  { "id": "dist-07", "province_id": "prov-1", "name_np": "धनकुटा", "name_en": "Dhankuta" },
+  { "id": "dist-08", "province_id": "prov-1", "name_np": "तेह्रथुम", "name_en": "Terhathum" },
+  { "id": "dist-09", "province_id": "prov-1", "name_np": "सङ्खुवासभा", "name_en": "Sankhuwasabha" },
+  { "id": "dist-10", "province_id": "prov-1", "name_np": "भोजपुर", "name_en": "Bhojpur" },
+  { "id": "dist-11", "province_id": "prov-1", "name_np": "सोलुखुम्बु", "name_en": "Solukhumbu" },
+  { "id": "dist-12", "province_id": "prov-1", "name_np": "ओखलढुङ्गा", "name_en": "Okhaldhunga" },
+  { "id": "dist-13", "province_id": "prov-1", "name_np": "खोटाङ", "name_en": "Khotang" },
+  { "id": "dist-14", "province_id": "prov-1", "name_np": "उदयपुर", "name_en": "Udayapur" }
+]   
