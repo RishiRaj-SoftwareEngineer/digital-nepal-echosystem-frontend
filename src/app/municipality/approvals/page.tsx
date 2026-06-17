@@ -86,9 +86,7 @@ export default function MunicipalityApprovalsPage() {
         (citizen) => citizen.id === approval.citizen_id,
       );
 
-      const submitter = users.find(
-        (user) => user.id === approval.submitter_id,
-      );
+      const submitter = users.find((user) => user.id === approval.submitter_id);
 
       const ward = wards.find((ward) => ward.id === citizen?.ward_id);
 
@@ -136,8 +134,7 @@ export default function MunicipalityApprovalsPage() {
       selectedStatus === "ALL" || approval.status === selectedStatus;
 
     const matchesField =
-      selectedField === "ALL" ||
-      approval.changedFields.includes(selectedField);
+      selectedField === "ALL" || approval.changedFields.includes(selectedField);
 
     return matchesWard && matchesStatus && matchesField;
   });

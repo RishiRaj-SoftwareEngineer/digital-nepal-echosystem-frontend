@@ -31,18 +31,19 @@ export type ConsentChannel =
   | "VERBAL_WITNESS"
   | "OTHER";
 
-export const EMPLOYMENT_CATEGORIES:  EmploymentCategory[] = [
-  "FARMER", "BUSINESS", "GOVERNMENT_EMPLOYEE", "PRIVATE_EMPLOYEE",
-  "STUDENT", "UNEMPLOYED", "OTHER",
+export const EMPLOYMENT_CATEGORIES: EmploymentCategory[] = [
+  "FARMER",
+  "BUSINESS",
+  "GOVERNMENT_EMPLOYEE",
+  "PRIVATE_EMPLOYEE",
+  "STUDENT",
+  "UNEMPLOYED",
+  "OTHER",
 ];
 
-export const SYNC_STATUSES: SyncStatus[] = [
-  "synced", "pending", "failed",
-];
+export const SYNC_STATUSES: SyncStatus[] = ["synced", "pending", "failed"];
 
-export const SEXES: Sex[] = [
-  "MALE", "FEMALE", "OTHER",
-];
+export const SEXES: Sex[] = ["MALE", "FEMALE", "OTHER"];
 
 export const DIGITAL_LITERACIES: DigitalLiteracy[] = [
   "BASIC", "INTERMEDIATE", "ADVANCED", "NONE",

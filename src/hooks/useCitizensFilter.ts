@@ -1,7 +1,7 @@
-import { useState, useMemo } from 'react';
-import type { Citizen } from '@/types/citizen';
-import citizensRaw from '../../data/citizens.json';
-import { WARD_ID } from '@/constants';
+import { useState, useMemo } from "react";
+import type { Citizen } from "@/types/citizen";
+import citizensRaw from "../../data/citizens.json";
+import { WARD_ID } from "@/constants";
 
 const citizens = citizensRaw as unknown as Citizen[];
 
@@ -11,12 +11,12 @@ export function useCitizensFilter() {
     [],
   );
 
-  const [search, setSearch] = useState('');
-  const [nidSearch, setNidSearch] = useState('');
-  const [employmentFilter, setEmploymentFilter] = useState('');
-  const [syncFilter, setSyncFilter] = useState('');
-  const [sexFilter, setSexFilter] = useState('');
-  const [verifiedFilter, setVerifiedFilter] = useState('');
+  const [search, setSearch] = useState("");
+  const [nidSearch, setNidSearch] = useState("");
+  const [employmentFilter, setEmploymentFilter] = useState("");
+  const [syncFilter, setSyncFilter] = useState("");
+  const [sexFilter, setSexFilter] = useState("");
+  const [verifiedFilter, setVerifiedFilter] = useState("");
 
   const filtered = useMemo(() => {
     return wardCitizens.filter((c: Citizen) => {
@@ -41,15 +41,23 @@ export function useCitizensFilter() {
       if (sexFilter && c.sex !== sexFilter) {
         return false;
       }
-      if (verifiedFilter === 'verified' && !c.nid_verified) {
+      if (verifiedFilter === "verified" && !c.nid_verified) {
         return false;
       }
-      if (verifiedFilter === 'unverified' && c.nid_verified) {
+      if (verifiedFilter === "unverified" && c.nid_verified) {
         return false;
       }
       return true;
     });
-  }, [wardCitizens, search, nidSearch, employmentFilter, syncFilter, sexFilter, verifiedFilter]);
+  }, [
+    wardCitizens,
+    search,
+    nidSearch,
+    employmentFilter,
+    syncFilter,
+    sexFilter,
+    verifiedFilter,
+  ]);
 
   return {
     filtered,
