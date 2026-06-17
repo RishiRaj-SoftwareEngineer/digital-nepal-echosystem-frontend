@@ -24,7 +24,7 @@ services/
 ## Usage
 
 ```typescript
-import { citizenService } from '@/services/citizenService';
+import { citizenService } from "@/services/citizenService";
 
 const citizens = await citizenService.fetchAll();
 ```

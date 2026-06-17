@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import type { ReactNode } from "react";
 
 interface Column<T> {
   key: string;
@@ -17,7 +17,7 @@ export default function Table<T>({
   columns,
   data,
   keyExtractor,
-  emptyMessage = 'No data found',
+  emptyMessage = "No data found",
 }: TableProps<T>) {
   return (
     <div className="overflow-x-auto">

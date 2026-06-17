@@ -1,5 +1,6 @@
-'use client';
-import Link from 'next/link';
+"use client";
+
+import Link from "next/link";
 
 interface NavItem {
   label: string;
@@ -11,15 +12,15 @@ interface NavbarProps {
   items?: NavItem[];
   userName?: string;
   jurisdiction?: string;
-  tier?: 'WARD' | 'MUNICIPALITY' | 'PROVINCE' | 'CENTRAL';
+  tier?: "WARD" | "MUNICIPALITY" | "PROVINCE" | "CENTRAL";
 }
 
 export default function Navbar({
-  title = 'Digital Nepal',
+  title = "Digital Nepal",
   items = [],
-  userName = 'Admin',
-  jurisdiction = 'Kathmandu',
-  tier = 'WARD',
+  userName = "Admin",
+  jurisdiction = "Kathmandu",
+  tier = "WARD",
 }: NavbarProps) {
   return (
     <nav className="bg-white border-b border-gray-200 px-6 py-3 flex items-center justify-between">

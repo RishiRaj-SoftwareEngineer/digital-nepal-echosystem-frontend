@@ -4,10 +4,7 @@ type AvatarProps = {
   size?: "sm" | "md" | "lg";
 };
 
-export function Avatar({
-  name,
-  image,
-}: AvatarProps) {
+export function Avatar({ name, image }: AvatarProps) {
   const initials = name.slice(0, 2);
 
   if (image) {
