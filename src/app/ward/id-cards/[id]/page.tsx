@@ -78,7 +78,6 @@ export default function IdCardDetailPage() {
     setCurrentStatus("COLLECTED");
 
     alert("ID Card marked as COLLECTED successfully!");
-    // In real app, you would save to backend or localStorage persistently
   };
 
   const maskQrHash = (hash: string) => {
